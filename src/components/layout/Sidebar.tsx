@@ -3,20 +3,7 @@ import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import {
-  Paw,
-  MessageCircle,
-  Info,
-  Tag,
-  Settings,
-  HelpCircle,
-  Mail,
-  AlertCircle,
-  LogOut,
-  ChevronRight,
-  Menu,
-  Users,
-} from 'lucide-react';
+import { PawPrint as Paw, MessageCircle, Info, Tag, Settings, HelpCircle, Mail, AlertCircle, LogOut, ChevronRight, Menu, Users } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 interface SidebarProps {
