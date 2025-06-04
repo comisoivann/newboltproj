@@ -4,9 +4,10 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
-  LayoutDashboard,
-  BarChart3,
-  Users,
+  Paw,
+  MessageCircle,
+  Info,
+  Tag,
   Settings,
   HelpCircle,
   Mail,
@@ -14,6 +15,7 @@ import {
   LogOut,
   ChevronRight,
   Menu,
+  Users,
 } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
@@ -25,32 +27,26 @@ interface SidebarProps {
 
 const mainNavItems = [
   {
-    title: 'Dashboard',
-    icon: LayoutDashboard,
+    title: 'Pets',
+    icon: Paw,
     href: '/',
     label: '6',
   },
   {
-    title: 'Analytics',
-    icon: BarChart3,
-    href: '/analytics',
+    title: 'Chats',
+    icon: MessageCircle,
+    href: '/chats',
     label: 'New',
   },
   {
-    title: 'Customers',
-    icon: Users,
-    href: '/customers',
+    title: 'About',
+    icon: Info,
+    href: '/about',
   },
   {
-    title: 'Help Center',
-    icon: HelpCircle,
-    href: '/help',
-  },
-  {
-    title: 'Inbox',
-    icon: Mail,
-    href: '/inbox',
-    label: '12',
+    title: 'Pricing',
+    icon: Tag,
+    href: '/pricing',
   },
   {
     title: 'Settings',
@@ -103,8 +99,14 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
         <div className={cn('py-4 flex items-center justify-between px-4')}>
           <div className={cn('flex items-center gap-2')}>
             {!isCollapsed && (
-              <div className="font-bold text-xl transition-all duration-300 opacity-0 animate-in fade-in-0 delay-200" 
-                   style={{ opacity: isCollapsed ? 0 : 1 }}>
+              <div 
+                className="font-bold text-xl transition-all duration-300 opacity-0"
+                style={{ 
+                  opacity: isCollapsed ? 0 : 1,
+                  transform: isCollapsed ? 'translateX(-10px)' : 'translateX(0)',
+                  transitionDelay: isCollapsed ? '0ms' : '200ms'
+                }}
+              >
                 Dashboard
               </div>
             )}
@@ -112,7 +114,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
           <Button
             variant="ghost"
             size="icon"
-            className="h-8 w-8"
+            className="h-8 w-8 flex items-center justify-center"
             onClick={() => setIsCollapsed(!isCollapsed)}
           >
             <ChevronRight
@@ -124,7 +126,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
           </Button>
         </div>
 
-        <ScrollArea className="flex-1 pt-4">
+        <ScrollArea className="flex-1">
           <div className="flex flex-col gap-1 px-2">
             {mainNavItems.map((item, index) => (
               <Link
