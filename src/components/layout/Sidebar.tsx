@@ -105,7 +105,9 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
             {!isCollapsed && (
               <div className="font-bold text-xl">Dashboard</div>
             )}
-            {isCollapsed && <LayoutDashboard className="h-6 w-6" />}
+            {isCollapsed && (
+              <LayoutDashboard className="h-6 w-6 animate-in fade-in duration-200" />
+            )}
           </div>
           <Button
             variant="ghost"
@@ -116,7 +118,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
             <ChevronRight
               className={cn(
                 'h-4 w-4 transition-transform',
-                isCollapsed ? 'rotate-180' : 'rotate-0'
+                isCollapsed ? 'rotate-0' : 'rotate-180'
               )}
             />
           </Button>
@@ -134,9 +136,11 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
                 )}
               >
                 <item.icon className={cn('h-5 w-5')} />
-                {!isCollapsed && <span>{item.title}</span>}
+                {!isCollapsed && (
+                  <span className="animate-in fade-in duration-200">{item.title}</span>
+                )}
                 {!isCollapsed && item.label && (
-                  <span className="ml-auto text-xs bg-primary text-primary-foreground rounded-full py-0.5 px-2">
+                  <span className="ml-auto text-xs bg-primary text-primary-foreground rounded-full py-0.5 px-2 animate-in fade-in duration-200">
                     {item.label}
                   </span>
                 )}
@@ -157,7 +161,9 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
                 )}
               >
                 <item.icon className={cn('h-5 w-5')} />
-                {!isCollapsed && <span>{item.title}</span>}
+                {!isCollapsed && (
+                  <span className="animate-in fade-in duration-200">{item.title}</span>
+                )}
               </Link>
             ))}
           </div>
@@ -169,7 +175,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
               <Users className="h-4 w-4" />
             </div>
             {!isCollapsed && (
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 animate-in fade-in duration-200">
                 <p className="text-sm font-medium">Acme Inc.</p>
                 <p className="text-xs text-muted-foreground">Pro Plan</p>
               </div>
