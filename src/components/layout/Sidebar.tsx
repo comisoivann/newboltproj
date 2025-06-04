@@ -17,7 +17,9 @@ import {
   ChevronRight,
   Menu,
 } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger
+} from '@/components/ui/sheet';
 
 interface SidebarProps {
   className?: string;
@@ -90,7 +92,9 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-[280px] p-0">
-          <MobileSidebar />
+          <SheetHeader className="px-6 py-4 border-b">
+            <SheetTitle>Dashboard</SheetTitle>
+          </SheetHeader>
         </SheetContent>
       </Sheet>
 
@@ -186,10 +190,6 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
 function MobileSidebar() {
   return (
     <div className="flex flex-col h-full">
-      <div className="py-4 px-6 border-b">
-        <div className="font-bold text-xl">Dashboard</div>
-      </div>
-      
       <ScrollArea className="flex-1 p-4">
         <div className="flex flex-col gap-1">
           {mainNavItems.map((item, index) => (
