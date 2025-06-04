@@ -103,7 +103,10 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
         <div className={cn('py-4 flex items-center justify-between px-4')}>
           <div className={cn('flex items-center gap-2')}>
             {!isCollapsed && (
-              <div className="font-bold text-xl transition-all duration-300 animate-in fade-in-0">Dashboard</div>
+              <div className="font-bold text-xl transition-all duration-300 opacity-0 animate-in fade-in-0 delay-200" 
+                   style={{ opacity: isCollapsed ? 0 : 1 }}>
+                Dashboard
+              </div>
             )}
           </div>
           <Button
@@ -134,10 +137,26 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
               >
                 <item.icon className={cn('h-5 w-5')} />
                 {!isCollapsed && (
-                  <span className="transition-all duration-300 animate-in fade-in-0 delay-200">{item.title}</span>
+                  <span 
+                    className="transition-all duration-300 opacity-0"
+                    style={{ 
+                      opacity: isCollapsed ? 0 : 1,
+                      transform: isCollapsed ? 'translateX(-10px)' : 'translateX(0)',
+                      transitionDelay: isCollapsed ? '0ms' : '200ms'
+                    }}
+                  >
+                    {item.title}
+                  </span>
                 )}
                 {!isCollapsed && item.label && (
-                  <span className="ml-auto text-xs bg-primary text-primary-foreground rounded-full py-0.5 px-2 transition-all duration-300 animate-in fade-in-0 delay-200">
+                  <span 
+                    className="ml-auto text-xs bg-primary text-primary-foreground rounded-full py-0.5 px-2 transition-all duration-300 opacity-0"
+                    style={{ 
+                      opacity: isCollapsed ? 0 : 1,
+                      transform: isCollapsed ? 'translateX(-10px)' : 'translateX(0)',
+                      transitionDelay: isCollapsed ? '0ms' : '250ms'
+                    }}
+                  >
                     {item.label}
                   </span>
                 )}
@@ -159,7 +178,16 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
               >
                 <item.icon className={cn('h-5 w-5')} />
                 {!isCollapsed && (
-                  <span className="transition-all duration-300 animate-in fade-in-0 delay-200">{item.title}</span>
+                  <span 
+                    className="transition-all duration-300 opacity-0"
+                    style={{ 
+                      opacity: isCollapsed ? 0 : 1,
+                      transform: isCollapsed ? 'translateX(-10px)' : 'translateX(0)',
+                      transitionDelay: isCollapsed ? '0ms' : '200ms'
+                    }}
+                  >
+                    {item.title}
+                  </span>
                 )}
               </Link>
             ))}
@@ -172,7 +200,14 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
               <Users className="h-4 w-4" />
             </div>
             {!isCollapsed && (
-              <div className="flex flex-col gap-1 transition-all duration-300 animate-in fade-in-0 delay-200">
+              <div 
+                className="flex flex-col gap-1 transition-all duration-300 opacity-0"
+                style={{ 
+                  opacity: isCollapsed ? 0 : 1,
+                  transform: isCollapsed ? 'translateX(-10px)' : 'translateX(0)',
+                  transitionDelay: isCollapsed ? '0ms' : '200ms'
+                }}
+              >
                 <p className="text-sm font-medium">Acme Inc.</p>
                 <p className="text-xs text-muted-foreground">Pro Plan</p>
               </div>
