@@ -1,19 +1,21 @@
+
 import { StatsCard } from './StatsCard';
 import { ChartSection } from './ChartSection';
 import { RecentActivity } from './RecentActivity';
+import { ProfilesCard } from './ProfilesCard';
 import { Users, ShoppingCart, CreditCard, Activity } from 'lucide-react';
 
 export function DashboardPage() {
   return (
-    <div className="container py-8 space-y-8 animate-in fade-in duration-500">
+    <div className="py-4 md:py-8 space-y-6 md:space-y-8 animate-in fade-in duration-500">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-        <p className="text-muted-foreground">
+        <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Dashboard</h1>
+        <p className="text-muted-foreground text-sm md:text-base">
           Welcome back! Here's an overview of your business.
         </p>
       </div>
       
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-3 md:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <StatsCard
           title="Total Customers"
           value="3,245"
@@ -43,9 +45,19 @@ export function DashboardPage() {
         />
       </div>
       
-      <div className="grid gap-4 grid-cols-1 xl:grid-cols-12">
-        <ChartSection />
-        <RecentActivity />
+      <div className="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-12">
+        <div className="lg:col-span-8">
+          <ChartSection />
+        </div>
+        <div className="lg:col-span-4">
+          <RecentActivity />
+        </div>
+      </div>
+
+      <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <ProfilesCard />
+        <ProfilesCard />
+        <ProfilesCard />
       </div>
     </div>
   );
