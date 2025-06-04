@@ -103,10 +103,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
         <div className={cn('py-4 flex items-center justify-between px-4')}>
           <div className={cn('flex items-center gap-2')}>
             {!isCollapsed && (
-              <div className="font-bold text-xl">Dashboard</div>
-            )}
-            {isCollapsed && (
-              <LayoutDashboard className="h-6 w-6 animate-in fade-in duration-200" />
+              <div className="font-bold text-xl transition-all duration-300 animate-in fade-in-0">Dashboard</div>
             )}
           </div>
           <Button
@@ -117,7 +114,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
           >
             <ChevronRight
               className={cn(
-                'h-4 w-4 transition-transform',
+                'h-4 w-4 transition-transform duration-300',
                 isCollapsed ? 'rotate-0' : 'rotate-180'
               )}
             />
@@ -137,10 +134,10 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
               >
                 <item.icon className={cn('h-5 w-5')} />
                 {!isCollapsed && (
-                  <span className="animate-in fade-in duration-200">{item.title}</span>
+                  <span className="transition-all duration-300 animate-in fade-in-0 delay-200">{item.title}</span>
                 )}
                 {!isCollapsed && item.label && (
-                  <span className="ml-auto text-xs bg-primary text-primary-foreground rounded-full py-0.5 px-2 animate-in fade-in duration-200">
+                  <span className="ml-auto text-xs bg-primary text-primary-foreground rounded-full py-0.5 px-2 transition-all duration-300 animate-in fade-in-0 delay-200">
                     {item.label}
                   </span>
                 )}
@@ -162,7 +159,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
               >
                 <item.icon className={cn('h-5 w-5')} />
                 {!isCollapsed && (
-                  <span className="animate-in fade-in duration-200">{item.title}</span>
+                  <span className="transition-all duration-300 animate-in fade-in-0 delay-200">{item.title}</span>
                 )}
               </Link>
             ))}
@@ -175,7 +172,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
               <Users className="h-4 w-4" />
             </div>
             {!isCollapsed && (
-              <div className="flex flex-col gap-1 animate-in fade-in duration-200">
+              <div className="flex flex-col gap-1 transition-all duration-300 animate-in fade-in-0 delay-200">
                 <p className="text-sm font-medium">Acme Inc.</p>
                 <p className="text-xs text-muted-foreground">Pro Plan</p>
               </div>
