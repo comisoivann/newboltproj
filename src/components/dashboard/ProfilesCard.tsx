@@ -127,19 +127,21 @@ export function ProfilesCard({ className }: ProfilesCardProps) {
         </button>
       </footer>
 
-      <style jsx>{`
-        @media (min-width: 340px) {
-          .card__footer {
-            flex-direction: row !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            gap: 1rem !important;
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @media (min-width: 340px) {
+            .card__footer {
+              flex-direction: row !important;
+              align-items: center !important;
+              justify-content: space-between !important;
+              gap: 1rem !important;
+            }
+            .card__btn {
+              width: max-content !important;
+            }
           }
-          .card__btn {
-            width: max-content !important;
-          }
-        }
-      `}</style>
+        `
+      }} />
     </article>
   );
 }
