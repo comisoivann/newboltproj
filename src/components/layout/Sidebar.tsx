@@ -1,3 +1,4 @@
+
 import { Link } from '@/components/ui/link';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
@@ -83,7 +84,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
           className
         )}
       >
-        <div className={cn('py-4 flex items-center justify-between px-4')}>
+        <div className={cn('py-4 flex items-center px-4', isCollapsed ? 'justify-center' : 'justify-between')}>
           <div className={cn('flex items-center gap-2')}>
             {!isCollapsed && (
               <div 
