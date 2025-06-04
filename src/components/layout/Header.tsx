@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -34,7 +33,7 @@ export function Header({ isCollapsed }: HeaderProps) {
       'left-0'
     )}>
       {/* Reserve space for mobile menu button - it's rendered in Sidebar component */}
-      <div className="md:hidden w-10" />
+      <div className="md:hidden w-16" />
       
       <div className="flex-1 relative max-w-md hidden md:block">
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
