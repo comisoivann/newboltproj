@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from '@/components/ui/link';
 import { Separator } from '@/components/ui/separator';
@@ -82,13 +83,13 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
           <Button
             variant="outline"
             size="icon"
-            className="md:hidden fixed left-4 top-4 z-40"
+            className="md:hidden fixed left-2 top-2 z-50 h-10 w-10"
           >
             <Menu className="h-5 w-5" />
             <span className="sr-only">Toggle Menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-[240px] p-0">
+        <SheetContent side="left" className="w-[280px] p-0">
           <MobileSidebar />
         </SheetContent>
       </Sheet>
@@ -96,7 +97,7 @@ export function Sidebar({ className, isCollapsed, setIsCollapsed }: SidebarProps
       {/* Desktop Sidebar */}
       <div
         className={cn(
-          'hidden md:flex border-r bg-background h-screen flex-col transition-all duration-300',
+          'hidden md:flex border-r bg-background h-screen flex-col transition-all duration-300 fixed left-0 top-0 z-20',
           isCollapsed ? 'w-[80px]' : 'w-[240px]',
           className
         )}
